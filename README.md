@@ -1,2 +1,1 @@
-# learning
-Personal learning
+This folder is personally created to house algorithmic challenges.
