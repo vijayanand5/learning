@@ -1,3 +1,4 @@
+package algorithms;
 public class MergeSortn {
   private int[] numbers;
   private int[] helper;

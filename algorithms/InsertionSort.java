@@ -1,3 +1,4 @@
+package algorithms;
 /**
  * This class provides the implementation of selection sort algorithm
  * @author viperias

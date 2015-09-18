@@ -1,13 +1,14 @@
-public class MergeSort {
-  private int[] numbers;
-  private int[] helper;
+package algorithms;
+public class MergeSortNodes {
+  private Worker[] numbers;
+  private Worker[] helper;
 
   private int length;
 
-  public void sort(int[] values) {
+  public void sortNodes(Worker[] values) {
     this.numbers = values;
     length = values.length;
-    this.helper = new int[length];
+    this.helper = new Worker[length];
     mergesort(0, length - 1);
   }
 
@@ -37,17 +38,15 @@ public class MergeSort {
     int i = low;
     int j = middle + 1;
     int k = low;
-
     // Copy the smallest values from either the left or the right side back
     // to the original array
     while (i <= middle && j <= high) {
-      if (helper[i] <= helper[j]) {
+      if (helper[i].getData() <= helper[j].getData()) {
         numbers[k] = helper[i];
         i++;
       } else {
         numbers[k] = helper[j];
         j++;
-        
         
       }
       k++;
@@ -58,18 +57,31 @@ public class MergeSort {
       k++;
       i++;
     }
-    
 
   }
   
   public static void main(String[] args) {
-	MergeSort sort = new MergeSort();
-	
-	int arr[] = {3,2,1,-100, -150, 0};
-	sort.sort(arr);
+	MergeSortNodes sort = new MergeSortNodes();
+	Worker[] nodes = new Worker[15];
+	nodes[0] = new Worker(0, 8);
+	nodes[1] = new Worker(1, 2);
+	nodes[2] = new Worker(2, 25);
+	nodes[3] = new Worker(3, 1);
+	nodes[4] = new Worker(4, 28);
+	nodes[5] = new Worker(5, 55);
+	nodes[6] = new Worker(6, 61);
+	nodes[7] = new Worker(7, 0);
+	nodes[8] = new Worker(8, 15);
+	nodes[9] = new Worker(9, 4);
+	nodes[10] = new Worker(10, 3);
+	nodes[11] = new Worker(11, 77);
+	nodes[12] = new Worker(12, 90);
+	nodes[13] = new Worker(13, 18);
+	nodes[14] = new Worker(14, 44);
+	sort.sortNodes(nodes);
 	System.out.println("Sorted values:");
-	for(int i : arr){
-		System.out.print(" "+i);
+	for(Worker i : nodes){
+		System.out.println(" "+i.getIndex() + "-> " + i.getData());
 	}
 }
   

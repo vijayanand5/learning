@@ -1,3 +1,4 @@
+package algorithms;
 
 /*
  * This class holds the data and index of the array elements

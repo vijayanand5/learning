@@ -1,3 +1,4 @@
+package algorithms;
 
 /* 1 2 3 4   1 0 2 9
    0 1 5 6   2 1 3 8
